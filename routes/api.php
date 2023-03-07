@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('products', [\App\Http\Controllers\API\ProductController::class,'all']);
+Route::post('chekout', [\App\Http\Controllers\API\ChekoutController::class,'chekout']);
+Route::get('transactions/{id}', [\App\Http\Controllers\API\TransactionController::class,'get']);
