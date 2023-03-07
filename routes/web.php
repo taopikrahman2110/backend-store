@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,18 @@ use Inertia\Inertia;
 
 Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 
+
+Route::get('products/{id}/gallery',[\App\Http\Controllers\ProductController::class,'gallery'])->name('products.gallery');
 Route::resource('products',\App\Http\Controllers\ProductController::class);
+
+
+
+Route::resource('product-galleries',\App\Http\Controllers\ProductGalleryController::class);
+
+
+Route::get('transactions/{id}/set-status', [\App\Http\Controllers\TransactionController::class,'setStatus'])->name('transactions.status');
+Route::resource('transactions',\App\Http\Controllers\TransactionController::class);
+
 
 //Route::get('/', function () {
 //    return Inertia::render('Welcome', [

@@ -16,12 +16,12 @@ class Product extends Model
         'slug',
         'description',
         'price',
-        'quantity',
+        'quantity'
     ];
 
     public function galleries()
     {
-//        return $this->hasMany(ProductGalleri::class,'products_id','id');
+        return $this->hasMany(ProductGallery::class,'products_id');
     }
 
 
